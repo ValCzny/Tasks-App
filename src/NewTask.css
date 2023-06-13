@@ -1,0 +1,62 @@
+.newTask-container{
+    height: 85%;
+    background-color: antiquewhite;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: flex-start;
+    -webkit-box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
+    -moz-box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
+    box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
+}
+
+.new-task--title{
+    font-size: 2.5rem;
+    margin: 25px 0;
+}
+
+.new-task--p{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.new-task--input{
+    width: 90%;
+    height: 35px;
+    border-radius: 10px;
+    border: 0;
+    padding: 7px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.new-task--button{
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    margin-top: 13px;
+    height: 35px;
+    width: 90px;
+    border: 0;
+    border-radius: 10px;
+    padding: 7px;
+    font-size: 1.2rem;
+    background-color: coral;
+    cursor: pointer;
+}
+.new-task--button:hover{
+    background-color: rgb(202, 67, 17);
+}
+.new-task--button:active{
+    background-color: rgb(255, 86, 80);
+}
+
+.cat-picture{
+    width: 80%;
+    object-fit: cover;
+    margin-top: 60px;
+    align-self: center;
+}
+.cat-picture img {
+    width: 100%;
+}

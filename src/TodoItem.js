@@ -1,9 +1,9 @@
 function TodoItem(props) {
     return(
-      <li>
-        <span>V</span>
+      <li className="todo-item--li">
+        <span className="icon icon-completed icon-completed--active">V</span>
         <p>{props.text}</p>
-        <span>X</span>
+        <span className="icon icon-deleted">X</span>
       </li>
     );
   }

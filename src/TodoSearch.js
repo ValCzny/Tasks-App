@@ -1,6 +1,6 @@
 function TodoSearch() {
     return (
-      <input placeholder="Cortar cebolla"/>
+      <input placeholder="Search..." className="todo-search--input"/>
     )
   }
 

@@ -1,0 +1,64 @@
+.my-tasks--container{
+    height: 85%;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.my-tasks--title{
+    font-size: 6rem;
+    margin-bottom: 10px;
+}
+
+.todoCounter-title{
+    font-size: 2.5rem;
+}
+
+.todo-search--input{
+    margin: 10px 0;
+    width: 70%;
+    height: 35px;
+    border-radius: 10px;
+    border: 0;
+    padding: 7px;
+    font-family: 'Dosis', sans-serif;
+    -webkit-box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
+    -moz-box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
+    box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
+}
+
+.todo-list--ul{
+    list-style: none;
+    width: 320px;
+}
+
+.todo-item--li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+    height: 50px;
+    background-color:honeydew;
+    border-radius: 10px;
+    padding: 15px;
+
+    font-size: 1.4rem;
+}
+
+.icon {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.icon-completed--active{
+    color: rgb(0, 190, 0);
+}
+
+.icon-deleted{
+    color: red;
+}
