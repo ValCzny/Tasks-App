@@ -1,9 +1,15 @@
 function TodoItem(props) {
     return(
       <li className="todo-item--li">
-        <span className="icon icon-completed icon-completed--active">V</span>
-        <p>{props.text}</p>
-        <span className="icon icon-deleted">X</span>
+        <span 
+          className={`icon icon-completed ${props.completed && 'icon-completed--active'}`}
+          onClick={props.onComplete}
+        >V</span>
+        <p className={`item-p ${props.completed && 'item-p--complete'}`}>{props.text}</p>
+        <span 
+          className="icon icon-deleted"
+          onClick={props.onDelete}
+        >X</span>
       </li>
     );
   }

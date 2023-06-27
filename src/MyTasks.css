@@ -1,3 +1,4 @@
+/*My Tasks Container*/
 .my-tasks--container{
     height: 85%;
     padding: 15px;
@@ -13,9 +14,13 @@
     margin-bottom: 10px;
 }
 
+/*Todo Counter*/
+
 .todoCounter-title{
     font-size: 2.5rem;
 }
+
+/*Todo Search*/
 
 .todo-search--input{
     margin: 10px 0;
@@ -30,15 +35,23 @@
     box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
 }
 
+.todo-search--input:focus{
+    outline-color:dodgerblue;
+}
+
+/*Todo List*/
+
 .todo-list--ul{
     list-style: none;
     width: 320px;
 }
 
+/*Todo Item*/
+
 .todo-item--li{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 
     margin-bottom: 10px;
@@ -46,13 +59,15 @@
     background-color:honeydew;
     border-radius: 10px;
     padding: 15px;
-
-    font-size: 1.4rem;
 }
+
 
 .icon {
     font-size: 2.5rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .icon-completed--active{
@@ -60,5 +75,19 @@
 }
 
 .icon-deleted{
+    color: rgb(53, 53, 53);
+    margin-left: auto;
+}
+
+.icon-deleted:hover{
     color: red;
+}
+
+.item-p--complete{
+    text-decoration: line-through;
+}
+
+.item-p{
+    font-size: 1.4rem;
+    margin-left: 15px;
 }
