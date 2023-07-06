@@ -1,6 +1,6 @@
 function TodoList({children}) {
     return (
-        <ul className="todo-list--ul">
+        <ul className="todo-list--ul scrollingDiv">
             {children}
         </ul>
     );

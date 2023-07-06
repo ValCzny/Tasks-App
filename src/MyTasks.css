@@ -46,6 +46,26 @@
     width: 320px;
 }
 
+.scrollingDiv {
+    overflow-y: auto;
+    max-height: 300px;
+  }
+
+  .scrollingDiv::-webkit-scrollbar {
+    width: 7px;
+    background: rgba(241,112,92,1);
+    border-radius: 10px;
+  }
+
+  .scrollingDiv::-webkit-scrollbar-thumb {
+    background: #aa7474;
+    border-radius: 10px;
+  }
+
+  .scrollingDiv::-webkit-scrollbar-thumb:hover {
+    background: #7c5959;
+  }
+
 /*Todo Item*/
 
 .todo-item--li{
@@ -70,17 +90,20 @@
     cursor: pointer;
 }
 
-.icon-completed--active{
-    color: rgb(0, 190, 0);
+.icon-check--active{
+    fill: rgb(0, 190, 0);
 }
 
-.icon-deleted{
-    color: rgb(53, 53, 53);
+.icon-check:hover .icon-svg{
+    fill: rgb(0, 190, 0);
+}
+
+.icon-delete{
     margin-left: auto;
 }
 
-.icon-deleted:hover{
-    color: red;
+.icon-delete:hover .icon-svg{
+    fill: red;
 }
 
 .item-p--complete{

@@ -8,17 +8,30 @@ import'./MyTasks.css';
 import './App.css';
 import React from 'react';
 
-const defaultTodos = [
-  { text: 'Cortar cebolla', completed: true},
-  { text: 'Tomar el curso de intro a React', completed: false},
-  { text: 'Llorar', completed: false},
-  { text: 'LALALALALALA', completed: false},
-  { text: 'Comer palta', completed: true},
-]
+// const defaultTodos = [
+//   { text: 'Cortar cebolla', completed: true},
+//   { text: 'Tomar el curso de intro a React', completed: false},
+//   { text: 'Llorar', completed: false},
+//   { text: 'LALALALALALA', completed: false},
+//   { text: 'Comer palta', completed: true},
+// ]
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
+// localStorage.removeItem('TODOS_V1');
 
 function App() {
+  const localStorageTodos = localStorage.getItem('TODOS_V1');
+  let parsedTodos;
+
+  if (!localStorageTodos) {
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
+  const [todos, setTodos] = React.useState(parsedTodos);
   const [searchValue, setSearchValue] = React.useState('');
-  const [todos, setTodos] = React.useState(defaultTodos);
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -31,24 +44,30 @@ function App() {
     }
   )
 
-    const completeTodo = (text) => {
-      const newTodos = [...todos];
-      const todoIndex = newTodos.findIndex(
-        (todo) => todo.text === text
-      );
-      newTodos[todoIndex].completed = true;
-      setTodos(newTodos);
-    }
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos));
 
-    const deleteTodo = (text) => {
-      const newTodos = [...todos];
-      const todoIndex = newTodos.findIndex(
-        (todo) => todo.text === text
-      );
-      newTodos.splice(todoIndex, 1);
-      setTodos(newTodos);
-      console.log(123);
-    }
+    setTodos(newTodos);
+  }
+
+  const completeTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+    newTodos[todoIndex].completed = true;
+    saveTodos(newTodos);
+  }
+
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+       (todo) => todo.text === text
+    );
+    newTodos.splice(todoIndex, 1);
+    saveTodos(newTodos);
+    console.log(123);
+  }
 
   console.log('los usuarios buscan ToDos de ' + searchValue);
 
