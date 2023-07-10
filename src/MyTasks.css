@@ -10,14 +10,14 @@
 }
 
 .my-tasks--title{
-    font-size: 6rem;
-    margin-bottom: 10px;
+    font-size: 5rem;
+    margin-bottom: 5px;
 }
 
 /*Todo Counter*/
 
 .todoCounter-title{
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 /*Todo Search*/
@@ -113,4 +113,11 @@
 .item-p{
     font-size: 1.4rem;
     margin-left: 15px;
+}
+
+/*Mobile*/
+@media (max-width: 860px) {
+    .my-tasks--container{
+        height: 45%;
+    }
 }

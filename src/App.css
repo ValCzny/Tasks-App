@@ -28,3 +28,15 @@ html{
 .main-container section{
     width: 25%;
 }
+
+/*Mobile*/
+@media (max-width: 860px) {
+    .main-container{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    .main-container section{
+        width: 80%;
+    }
+}

@@ -60,3 +60,14 @@
 .cat-picture img {
     width: 100%;
 }
+
+/*Mobile*/
+@media (max-width: 860px) {
+    .newTask-container{
+        height: 30%;
+        margin-top: 20px;
+    }
+    .cat-picture{
+        display: none;
+    }
+}
