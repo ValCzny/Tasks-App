@@ -4,8 +4,8 @@ import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { NewTask } from './NewTask';
 
-import'./MyTasks.css';
-import './App.css';
+import'../css/MyTasks.css';
+import '../css/App.css';
 import React from 'react';
 
 // const defaultTodos = [
