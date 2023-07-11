@@ -1,4 +1,4 @@
-import './NewTask.css'
+import '../css/NewTask.css'
 
 function NewTask() {
     return (
