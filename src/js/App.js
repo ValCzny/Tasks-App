@@ -3,10 +3,18 @@ import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { NewTask } from './NewTask';
+import { TodosLoading } from './TodosLoading'
+import { TodosError } from './TodosError'
+import { EmptyTodos } from './EmptyTodos' 
+
+
+import { useLocalStorage } from './useLocalStorage';
 
 import'../css/MyTasks.css';
 import '../css/App.css';
 import React from 'react';
+
+// localStorage.removeItem('TODOS_V1');
 
 // const defaultTodos = [
 //   { text: 'Cortar cebolla', completed: true},
@@ -17,32 +25,14 @@ import React from 'react';
 // ]
 
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
-// localStorage.removeItem('TODOS_V1');
-
-function useLocalStorage(itemName, initialValue) {
-  const localStorageItem = localStorage.getItem(itemName);
-  
-  let parsedItem;
-  
-  if (!localStorageItem) {
-    localStorage.setItem(itemName, JSON.stringify(initialValue));
-    parsedItem = initialValue;
-  } else {
-    parsedItem = JSON.parse(localStorageItem);
-  }
-
-  const [item, setItem] = React.useState(parsedItem);
-  
-  const saveItem = (newItem) => {
-    localStorage.setItem(itemName, JSON.stringify(newItem));
-    setItem(newItem);
-  }
-
-  return [item, saveItem];
-}
 
 function App() {
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
+  const {
+    item: todos,
+    saveItem: saveTodos,
+    loading,
+    error,
+  } = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -87,6 +77,10 @@ function App() {
         />
 
         <TodoList>
+          {loading && <TodosLoading />}
+          {error && <TodosError />}
+          {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
+
           {searchedTodos.map(todo => (
             <TodoItem 
               key={todo.text} 

@@ -118,6 +118,6 @@
 /*Mobile*/
 @media (max-width: 860px) {
     .my-tasks--container{
-        height: 45%;
+        height: 50%;
     }
 }

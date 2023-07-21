@@ -67,6 +67,9 @@
         height: 30%;
         margin-top: 20px;
     }
+    .new-task--title{
+        margin: 2px;
+    }
     .cat-picture{
         display: none;
     }
