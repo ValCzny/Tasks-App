@@ -3,7 +3,8 @@ import React from'react';
 function TodosLoading() {
  
   return (
-      <p>Cargando...</p>
+    <div class="lds-hourglass"></div>
+      // <p>Cargando...</p>
     )
   }
 

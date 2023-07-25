@@ -3,7 +3,9 @@ import React from'react';
 function EmptyTodos() {
  
   return (
-      <p>¡Crea tu primer TODO!</p>
+      <div className='empty-container'>
+        <p>¡Crea tu primer TODO!</p>
+      </div>
     )
   }
 
