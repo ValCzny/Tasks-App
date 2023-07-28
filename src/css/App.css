@@ -34,7 +34,7 @@ html{
     .main-container{
         flex-direction: column-reverse;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
     }
     .main-container section{
         width: 80%;

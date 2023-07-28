@@ -6,6 +6,7 @@ import { NewTask } from './NewTask';
 import { TodosLoading } from './TodosLoading'
 import { TodosError } from './TodosError'
 import { EmptyTodos } from './EmptyTodos' 
+// import { Modal } from './Modal';
 
 
 import { useLocalStorage } from './useLocalStorage';
@@ -34,6 +35,8 @@ function App() {
     error,
   } = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
+  const [input, setInput] = React.useState('');
+  // const [openModal, setOpenModal] = React.useState(true);
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -46,6 +49,15 @@ function App() {
     }
   )
 
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      text,
+      completed: false,
+    })
+    saveTodos(newTodos);
+  }
+  
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex(
@@ -67,7 +79,11 @@ function App() {
   return (
   <React.Fragment>
     <AppContainer>
-      <NewTask />
+      <NewTask 
+        onCreate={ () => addTodo(input)}
+        setInput={setInput}
+        input={input}
+      />
       <section className='my-tasks--container'>
         <h1 className='my-tasks--title'>Your Tasks</h1>
         <TodoCounter completed={completedTodos} total={totalTodos} />
@@ -92,6 +108,13 @@ function App() {
           ))}
         </TodoList>
       </section>
+      
+      {/* { openModal && (
+        <Modal>
+          <p>0123456789</p>
+        </Modal>
+      )} */}
+
     </AppContainer>
   </React.Fragment>
   );

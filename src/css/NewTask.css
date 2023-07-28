@@ -1,15 +1,17 @@
-.newTask-container{
-    height: 85%;
+.container{
     background-color: antiquewhite;
-    padding: 15px;
+    -webkit-box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
+    -moz-box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
+    box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
     border-radius: 10px;
+}
+.newTask-container{
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: flex-start;
-    -webkit-box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
-    -moz-box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
-    box-shadow: 0px 0px 31px -3px rgba(110,110,110,1);
+
 }
 
 .new-task--title{
@@ -63,9 +65,8 @@
 
 /*Mobile*/
 @media (max-width: 860px) {
-    .newTask-container{
-        height: 30%;
-        margin-top: 20px;
+    .container{
+        height: 33%;
     }
     .new-task--title{
         margin: 2px;
