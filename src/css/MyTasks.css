@@ -119,8 +119,8 @@
     width: 100%;
     padding: 15px;
     margin-top: 10px;
-    border-radius: 10px;
-    background-color: coral;
+    /* border-radius: 10px;
+    background-color: coral; */
     color: #000;
     text-align: center;
     font-size: 1.9rem;
@@ -165,4 +165,17 @@
     .my-tasks--container{
         height: 60%;
     }
+    .empty-container p::before {
+        content: "↓";
+    }
+    .empty-container p::after {
+        content: "↓";
+    }
 }
+
+@media (min-width: 860px) {
+    .empty-container p::before {
+        content: "← ";
+    }
+}
+

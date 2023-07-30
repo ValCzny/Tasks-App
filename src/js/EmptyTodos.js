@@ -4,7 +4,7 @@ function EmptyTodos() {
  
   return (
       <div className='empty-container'>
-        <p>¡Crea tu primer Task!</p>
+        <p>Create you firt Task</p>
       </div>
     )
   }
